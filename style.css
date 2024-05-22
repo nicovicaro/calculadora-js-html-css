@@ -1,0 +1,139 @@
+@import url('https://fonts.cdnfonts.com/css/ds-digital');
+@import url('https://fonts.cdnfonts.com/css/bankgothic-md-bt');                
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #120d24;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 30px;
+
+}
+
+.multi, .resta, .sum, .div {
+  width: 100%;
+  height: 100%;
+  font-size: 24px;
+  padding: 0;
+  margin: 0;
+}
+
+.multi, .resta {
+color: aqua;
+text-shadow: 1px 1px #f00 ;
+opacity: .6;
+animation: mover  13s ease-in-out alternate infinite,
+           rotar 18s linear alternate-reverse .3s infinite;      
+}
+
+.sum, .div {
+  color: #f00;
+text-shadow: 1px 1px aqua ;
+opacity: .6;
+animation: mover  13s ease-in-out alternate-reverse infinite,
+           rotar 18s linear alternate .45s infinite ;
+}
+
+.marca {
+  font-size: 22px;
+  color: #1c1c1c;
+  letter-spacing: .8px;
+  font-family: 'BankGothic Md BT', sans-serif;
+}
+
+.calculadora {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: rgb(151, 150, 150);
+  color: #fff;
+  width: 400px;
+  max-width: 100%;
+  padding: 24px 20px;
+  border-radius: 16px;
+  user-select: none;
+  height: 90%;
+  padding-bottom: 40px;
+  z-index: 48;
+}
+
+.pantalla {
+  font-family: 'DS-Digital', sans-serif;
+  grid-column: 1 / -1;
+  background-color: rgb(85, 152, 190);
+  color: #111;
+  padding: 16px;
+  font-size: 48px;
+  text-align: right;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+#c{
+  background-color: rgb(215, 29, 29);
+  box-shadow: .1rem .1rem .1rem rgb(213, 12, 12),
+    .1rem .2rem rgb(212, 7, 7);
+  grid-column: 1 / 3;
+}
+
+#c:active {
+  box-shadow: .1rem .1rem .1rem rgb(190,14,14),
+    .1rem .2rem rgb(201, 12, 12);
+  background-color: rgb(202, 18, 18);
+} 
+
+.btn {
+  border: 2px solid #111;
+  background-color: #f0ecec;
+  padding: 4px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  box-shadow: .1rem .1rem .1rem #f0ecec,
+    .1rem .2rem #fff;
+}
+
+
+.btn:active {
+  box-shadow: .1rem .1rem .1rem #ccc,
+    .1rem .2rem #ccc;
+  background-color: #cecece;
+} 
+
+#igual {
+  grid-column: 3 / 5;
+  grid-row: 7/ 8;
+}
+
+@keyframes mover { 
+  100% {
+    transform: translate(100%);
+  } 
+}
+
+@keyframes rotar {
+  100% {
+    transform: rotate(20DEG);
+  }
+}
